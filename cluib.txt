@@ -1,0 +1,95 @@
+FRONTEND
+  JS
+  React
+
+___________________________________________________________________________________
+
+BACKEND:
+  Java
+  Springboot
+  MySQL
+
+  Estructura de capas:
+    Controlador
+    Servicio
+    Repositorio
+    Entidad
+
+  Entidades:
+    ✅📌Actividad:
+      Representa una actividad ofrecida por el club, como yoga, natación, tenis, etc.
+      Atributos: 
+        id,
+        string nombre, 
+        string descripción, 
+        horario, 
+        duración, 
+        costo, 
+        capacidad máxima, etc.
+
+    ✅📌Socio:
+      Representa a una persona que es miembro del club.
+      Atributos: 
+        id,
+        nombre, 
+        apellido, 
+        fecha de nacimiento, 
+        dirección, 
+        número de contacto, 
+        correo electrónico, etc.
+
+    ✅📌Entrenador:
+      Representa a un entrenador o instructor que imparte clases o actividades en el club.
+      Atributos: 
+        id,
+        nombre, 
+        apellido, 
+        especialidad, 
+        horario de disponibilidad, etc.
+
+    ✅Reserva:
+      Representa la reserva de una actividad realizada por un socio.
+      Atributos: 
+        id,
+        socio (referencia al socio que hizo la reserva), 
+        actividad (referencia a la actividad reservada), 
+        fecha y hora de la reserva, 
+        estado (confirmada, pendiente, cancelada), etc.
+
+    ❓Pago:
+      Representa un pago realizado por un socio por una reserva o membresía.
+      Atributos: 
+        id,
+        socio (referencia al socio que realizó el pago), 
+        monto, fecha y hora del pago, método de pago, estado (pendiente, completado), etc.
+
+    ✅Clase:
+      Representa una clase específica impartida por un entrenador, como "Clase de Yoga con María".
+      Atributos: 
+        id,
+        nombre de la clase, 
+        descripción, 
+        horario, 
+        duración, 
+        entrenador (referencia al entrenador que la imparte), etc.
+
+    Instalación:
+      Representa una instalación o espacio dentro del club, como una piscina, una cancha de tenis, un gimnasio, etc.
+      Atributos: 
+        id
+        nombre, 
+        descripción, 
+        capacidad, 
+        disponibilidad de horario, etc.
+
+    ✅Membresía:
+      Representa una membresía o tipo de suscripción que un socio puede tener en el club.
+      Atributos: 
+        id,
+        tipo de membresía (mensual, anual, etc.), 
+        beneficios incluidos, 
+        costo, etc.
+
+___________--
+inicio, club, asociate, socios, disciplinas
+
