@@ -1,7 +1,6 @@
 FRONTEND
   JS
   React
-
 ___________________________________________________________________________________
 
 BACKEND:
@@ -14,7 +13,7 @@ BACKEND:
     Servicio
     Repositorio
     Entidad
-
+----------------------------------------------------------------------------------------------
   Entidades:
     ✅📌Actividad:
       Representa una actividad ofrecida por el club, como yoga, natación, tenis, etc.
@@ -32,10 +31,15 @@ BACKEND:
       Atributos: 
         id,
         nombre, 
-        apellido, 
+        apellido,
+        documento,
         fecha de nacimiento, 
         dirección, 
-        número de contacto, 
+        número de contacto,
+        estado (alta/baja) Boolean
+        Membresia membresia
+        (Relacion many to many)
+        Actividad actividad
         correo electrónico, etc.
 
     ✅📌Entrenador:
@@ -73,23 +77,37 @@ BACKEND:
         duración, 
         entrenador (referencia al entrenador que la imparte), etc.
 
-    Instalación:
+    ✅Instalación:
       Representa una instalación o espacio dentro del club, como una piscina, una cancha de tenis, un gimnasio, etc.
       Atributos: 
         id
         nombre, 
-        descripción, 
-        capacidad, 
-        disponibilidad de horario, etc.
+        descripción,
+        -img
 
     ✅Membresía:
       Representa una membresía o tipo de suscripción que un socio puede tener en el club.
       Atributos: 
         id,
-        tipo de membresía (mensual, anual, etc.), 
-        beneficios incluidos, 
+        tipo de membresía (mensual, anual, etc.),
+        beneficios incluidos,
         costo, etc.
 
-___________--
-inicio, club, asociate, socios, disciplinas
+
+
+--------------------------------------------------------------------
+
+Inicio  club(Intalaciones)  Disciplinas  Profesores Registrate/Inciar
+
+✅ La pagina permitira que el socio pueda inciar secion o registrarse, inscribirse en actividades y poder solicitar la alta/baja de la membresia.
+✅ El socio podra ver listado de todas las activdades a las cuales este inscripto, con sus respectivo de talle.
+✅ El admin podra dar de baja/alta profesores o disciplinas y inhabilitar socios por falta de pago.
+✅ Brindar datos de contacto, redes sociales.
+✅ Galeria de instalaciones.
+---------------------------------------------------
+✅ CRUD - USUARIO
+✅ CRUD - ENTRENADORES
+✅ RESERVA - INSTALACIONES(En base a la membresia mensual/anual,etc.).
+
+
 
