@@ -1,4 +1,4 @@
-package com.club.Club;
+package com.club.club;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
