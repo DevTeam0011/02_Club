@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package com.Club.Club.entidades;
-=======
 package com.club.Club.entidades;
->>>>>>> 1dee2ae7e4a37af30349013746cf707da07769b5
 
 import java.time.LocalTime;
 
