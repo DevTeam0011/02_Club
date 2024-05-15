@@ -19,18 +19,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Socios {
+public class Socio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Long idSocio;
+
     private String nombre;
+
     private String apellido;
+
     private Integer documento;
+
     @Temporal(TemporalType.DATE)
     private LocalDate fecha_nacimiento;
+
     private Integer direccion;
+
     private Integer telefono;
+    
     private boolean alta;
     
     //private Membresia membresia;
