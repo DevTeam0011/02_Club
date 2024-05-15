@@ -1,4 +1,5 @@
 package com.club.Club.entidades;
+<<<<<<< HEAD
 
 import java.time.LocalDate;
 
@@ -27,3 +28,5 @@ public class Clase {
 
     
 }
+=======
+>>>>>>> 1dee2ae7e4a37af30349013746cf707da07769b5

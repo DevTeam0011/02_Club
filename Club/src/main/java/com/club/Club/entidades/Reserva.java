@@ -1,8 +1,8 @@
-package com.club.club.entidades;
+package com.club.Club.entidades;
 
 import org.springframework.data.annotation.Id;
 
-import com.club.club.enums.Estados;
+import com.club.Club.enums.Estados;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

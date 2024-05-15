@@ -1,4 +1,4 @@
-package com.club.club.entidades;
+package com.Club.Club.entidades;
 
 import java.time.LocalTime;
 
