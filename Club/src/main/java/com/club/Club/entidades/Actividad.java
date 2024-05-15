@@ -18,11 +18,14 @@ public class Actividad {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+
         private String nombre; 
+
         private String descripción; 
+
         @Temporal(TemporalType.TIME)
         private String horario; 
+        
         private Integer costo; 
         
-    
 }
