@@ -1,5 +1,7 @@
 package com.club.club.entidades;
 
+import java.time.LocalTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,22 +12,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-public class Actividad {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-
-        private String nombre; 
-
-        private String descripción; 
-
-        @Temporal(TemporalType.TIME)
-        private String horario; 
-        
-        private Integer costo; 
-        
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Entrenador {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String nombre;
+  private String apellido;
+  private String especialidad;
+  @Temporal(TemporalType.TIME)
+  private LocalTime horarioDisponibilidad;
 }
