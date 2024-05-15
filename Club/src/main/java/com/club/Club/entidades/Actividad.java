@@ -1,4 +1,4 @@
-package com.club.club.entidades;
+package com.club.Club.entidades;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
