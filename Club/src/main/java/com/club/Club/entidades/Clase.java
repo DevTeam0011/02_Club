@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Clase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String  idClase;
+    private Long  idClase;
     private String nombre_clase;
     private String descripcion;
     @Temporal(TemporalType.DATE)
