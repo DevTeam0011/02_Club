@@ -1,0 +1,10 @@
+Para poder ejecutar el backend con spring hay que configurar las variables de entorno que se usarán para conectarse a la base de datos 
+configurada en el application.properties del proyecto spring.
+
+Para definir estas variables:
+  en windows es buscando en el panel de control "variables de entorno" y dandole a la opcion "Editar las variables de entorno de esta cuenta". Ahí
+  hay que hacer click en el boton Nuevo, de la seccion de variables de entorno del Usuario. 
+    Agregar:
+      MYSQL_SERVER_USERNAME, y en el valor tu nombre de usuario de mysql
+      MYSQL_SERVER_PASSWORD, y en el valor tu contraseña de mysql
+      (respetar los nombres)
