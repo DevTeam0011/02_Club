@@ -1,0 +1,64 @@
+[33m8279050[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33mfcd5b80[m volviendo atras
+[33m1e6e557[m comitclas
+[33mb936c5d[m flakdjflajlf
+[33m8e780fd[m Agregado application.properties al .gitignore
+[33m9ab932c[m Update .gitignore
+[33mf5960fe[m Merge pull request #13 from GGNahuel/nacho
+[33ma086fad[m[33m ([m[1;31morigin/nacho[m[33m)[m da
+[33m252dbe8[m Merge pull request #12 from GGNahuel/nacho2
+[33m134b23a[m Merge pull request #9 from GGNahuel/leandro
+[33m7669f0a[m[33m ([m[1;31morigin/leandro[m[33m, [m[1;32mleandro[m[33m)[m Repo_Actividad
+[33m38903d8[m Repo_EntrenadorYSocio
+[33mdbd2326[m Merge pull request #8 from GGNahuel/nacho2
+[33me921a81[m ignore
+[33m2614af7[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg into nacho2
+[33m6bb4ad8[m eliminando reserva
+[33m8c71eea[m mysql_error
+[33md203165[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33mdd073f0[m Merge pull request #7 from GGNahuel/probando_configurar_variables_de_entorno_para_el_application.properties
+[33mbe7b9bc[m cerrando comit
+[33m0ffdbfc[m[33m ([m[1;31morigin/probando_configurar_variables_de_entorno_para_el_application.properties[m[33m)[m agregado de instrucciones para los colaboradores externos
+[33mf389df9[m aplicación de variables de entorno para el application properties
+[33m3e34ed4[m Update .gitignore
+[33m3b4f28d[m Delete .vscode directory
+[33m5b29139[m Merge pull request #6 from GGNahuel/haciendo-que-la-carpeta-del-vscode-sea-ignorada-para-el-repositorio
+[33m8c44b34[m correcion de la carpeta vscode en el .gitignore
+[33mf73cbe4[m Eliminamos reserva entity
+[33m9c5c9af[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33m13b5d98[m haciendo lio
+[33m4334f71[m Reparando id Clase a long
+[33m98f8d88[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33mc6ab8c7[m Completing merge
+[33mb68ba58[m eliminando entidad reserva
+[33m6deb160[m "Eliminacion de carpeta random"
+[33mbb904e6[m error_dos
+[33ma670806[m primeros_errores
+[33m020dbc6[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33m1843be1[m probando solucion l fallo
+[33m1f24762[m creacion_de_clase
+[33m1dee2ae[m actualizacion package a mayuscula
+[33m36ccf65[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33m8582eb2[m creacion de gitignore
+[33m373dbaa[m Update ClubApplication.java
+[33mec126e1[m Merge pull request #5 from GGNahuel/creacion_entidad_entrenador
+[33me47402a[m cambio nombre package a club
+[33maa12fe9[m Merge pull request #4 from GGNahuel/creacion_entidad_entrenador
+[33mdf8c5a3[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg into creacion_entidad_entrenador
+[33m93bbe37[m Creación entidad entrenador
+[33m24e7fc4[m Merge pull request #3 from GGNahuel/creacion_entidad_clase
+[33m0ac489b[m Merge pull request #2 from GGNahuel/Nacho
+[33mb592e07[m creacion_entidad_clase
+[33md8d3824[m Reserva, Estados
+[33mdd6268c[m Merge pull request #1 from GGNahuel/agregacion_de_entidades
+[33m947bbe9[m creacion entrenador entidad vacio
+[33m781e4ca[m creacion entidad socio,activiad
+[33m7da8679[m Creacion de carpetas basicas
+[33mb513b7b[m Creacion del back con maven
+[33m5339d29[m "Corrigiendo errores"
+[33m94d7581[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33mb6275ba[m Creacion del Back Spring
+[33m19885d4[m Merge branch 'main' of https://github.com/GGNahuel/Proyecto-001-egg
+[33m6d00e48[m index
+[33m50c489e[m Funciones de la Pagina
+[33m6720325[m primer commit
