@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -31,5 +32,8 @@ build/
 
 ### VS Code ###
 .vscode/*
-
+Club\src\main\resources\application.properties
+D:\Proyecto-01\Proyecto-001-egg\Club\src\main\resources\application.properties
+Club\src\main\resources\application.properties
+application.properties
 .env
