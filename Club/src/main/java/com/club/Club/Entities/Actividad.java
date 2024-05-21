@@ -1,4 +1,4 @@
-package com.club.Club.entidades;
+package com.club.Club.Entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +21,7 @@ public class Actividad {
 
         private String nombre; 
 
-        private String descripción; 
+        private String descripcion; 
 
         @Temporal(TemporalType.TIME)
         private String horario; 

@@ -1,9 +1,9 @@
-package com.club.Club.repositorios;
+package com.club.Club.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.club.Club.entidades.Entrenador;
+import com.club.Club.Entities.Entrenador;
 
 @Repository
 public interface EntrenadorRepositorio extends JpaRepository<Entrenador,Long> {
