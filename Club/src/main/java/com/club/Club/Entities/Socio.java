@@ -1,7 +1,11 @@
-package com.club.Club.entidades;
+package com.club.Club.Entities;
 
 import java.time.LocalDate;
+import java.util.Date;
 
+import org.aspectj.lang.annotation.SuppressAjWarnings;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,15 +19,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Clase {
+public class Socio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  idClase;
-    private String nombre_clase;
-    private String descripcion;
-    @Temporal(TemporalType.DATE)
-    private LocalDate horario;
-    private String entrenador;
+    @Column
+    private Long idSocio;
 
+    private String nombre;
+
+    private String apellido;
+
+    private Integer documento;
+
+    @Temporal(TemporalType.DATE)
+    private LocalDate fecha_nacimiento;
+
+    private Integer direccion;
+
+    private Integer telefono;
+    
+    private boolean alta;
+    
+    //private Membresia membresia;
     
 }
