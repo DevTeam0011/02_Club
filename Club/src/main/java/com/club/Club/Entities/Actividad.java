@@ -1,5 +1,7 @@
 package com.club.Club.Entities;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +26,7 @@ public class Actividad {
         private String descripcion; 
 
         @Temporal(TemporalType.TIME)
-        private String horario; 
+        private Date horario; 
         
         private Integer costo; 
 

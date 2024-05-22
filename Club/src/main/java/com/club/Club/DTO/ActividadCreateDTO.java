@@ -1,5 +1,7 @@
 package com.club.Club.DTO;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -10,7 +12,7 @@ public class ActividadCreateDTO {
 
     private String descripcion;
 
-    private String horario;
+    private Date horario;
 
     private Integer costo;
 }
