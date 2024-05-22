@@ -27,5 +27,11 @@ public class Actividad {
         private String horario; 
         
         private Integer costo; 
+
+        private boolean estado;
+
+        
+
+
         
 }
