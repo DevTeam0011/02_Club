@@ -59,7 +59,7 @@ public class ActividadServicio {
 
     // MODIFICAR ACTIVIDAD-----------------------------------------------
     @Transactional
-    public void modificarEditorial(ActividadCreateDTO ADTO) throws Exception {
+    public void modificarActividad(ActividadCreateDTO ADTO) throws Exception {
         // VALIDAR ACTIVIVDAD
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
                 new String[] { "nombre", "descripcion", "horario", "costo" }, ADTO.getNombre(), ADTO.getDescripcion(),
