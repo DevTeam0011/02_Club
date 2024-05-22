@@ -1,4 +1,4 @@
-package com.club.Club.services;
+package com.club.Club.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

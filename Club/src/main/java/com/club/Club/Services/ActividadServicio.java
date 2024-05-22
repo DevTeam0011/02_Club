@@ -1,4 +1,4 @@
-package com.club.Club.services;
+package com.club.Club.Services;
 
 import java.util.ArrayList;
 import java.util.List;
