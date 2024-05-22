@@ -23,7 +23,7 @@ public class Clase {
     private String descripcion;
     @Temporal(TemporalType.DATE)
     private LocalDate horario;
-    private String entrenador;
+    private Entrenador entrenador;
 
     
 }
