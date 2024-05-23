@@ -1,16 +1,22 @@
 package com.club.Club.Entities;
 
-import java.time.LocalDate;
+import java.time.LocalTime;
+
+import com.club.Club.Enums.Turno;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,12 +24,17 @@ import lombok.NoArgsConstructor;
 public class Clase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  idClase;
-    private String nombre_clase;
-    private String descripcion;
-    @Temporal(TemporalType.DATE)
-    private LocalDate horario;
-    private Entrenador entrenador;
+    private Long  id;
 
-    
+    private String nombre;
+
+    @Temporal(TemporalType.TIME)
+    private LocalTime horario;
+
+    @Enumerated(EnumType.STRING)
+    private Turno turno;
+
+    @ManyToOne
+    private Entrenador entrenador_id;
+
 }

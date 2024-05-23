@@ -21,23 +21,23 @@ public class EntrenadorServicio {
     @Autowired
     EntrenadorRepositorio entrenadorRepositorio;
 
-    @Transactional
-    public void CrearEntrenador(EntrenadorDTO EDTO) throws Exception {
-        // VALIDAR ACTIVIVDAD
-        metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "nombre", "apellido", "especialidad", "horarioDisponibilidad" }, EDTO.getNombre(),
-                EDTO.getApellido(),
-                EDTO.getEspecialidad(), EDTO.getHorarioDisponibilidad());
+    // @Transactional
+    // public void CrearEntrenador(EntrenadorDTO EDTO) throws Exception {
+    //     // VALIDAR ACTIVIVDAD
+    //     metodosUtiles.validateFieldsAreNotEmptyOrNull(
+    //             new String[] { "nombre", "apellido", "especialidad", "horarioDisponibilidad" }, EDTO.getNombre(),
+    //             EDTO.getApellido(),
+    //             EDTO.getEspecialidad(), EDTO.getHorarioDisponibilidad());
 
-        Entrenador newEntre = new Entrenador();
-        newEntre.setNombre(EDTO.getNombre());
-        newEntre.setApellido(EDTO.getApellido());
-        newEntre.setEspecialidad(EDTO.getEspecialidad());
-        newEntre.setHorarioDisponibilidad(EDTO.getHorarioDisponibilidad());
+    //     Entrenador newEntre = new Entrenador();
+    //     newEntre.setNombre(EDTO.getNombre());
+    //     newEntre.setApellido(EDTO.getApellido());
+    //     newEntre.setEspecialidad(EDTO.getEspecialidad());
+    //     newEntre.setHorarioDisponibilidad(EDTO.getHorarioDisponibilidad());
 
-        // EntrenadorRepositorio.save(newEntre);
+    //     // EntrenadorRepositorio.save(newEntre);
 
-    }
+    // }
 
     // LISTAR ACTIVIDADES-----------------------------------------------
     @Transactional(readOnly = true)
@@ -58,26 +58,26 @@ public class EntrenadorServicio {
     }
 
     // MODIFICAR ENTRENADOR-----------------------------------------------
-    @Transactional
-    public void modificarEntrenador(EntrenadorDTO EDTO) throws Exception {
-        // VALIDAR ACTIVIVDAD
-        metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "nombre", "apellido", "especialidad", "horarioDisponibilidad" }, EDTO.getNombre(),
-                EDTO.getApellido(),
-                EDTO.getEspecialidad(), EDTO.getHorarioDisponibilidad());
+    // @Transactional
+    // public void modificarEntrenador(EntrenadorDTO EDTO) throws Exception {
+    //     // VALIDAR ACTIVIVDAD
+    //     metodosUtiles.validateFieldsAreNotEmptyOrNull(
+    //             new String[] { "nombre", "apellido", "especialidad", "horarioDisponibilidad" }, EDTO.getNombre(),
+    //             EDTO.getApellido(),
+    //             EDTO.getEspecialidad(), EDTO.getHorarioDisponibilidad());
 
-        Optional<Entrenador> entrenador = entrenadorRepositorio.findById(EDTO.getId());
+    //     Optional<Entrenador> entrenador = entrenadorRepositorio.findById(EDTO.getId());
 
-        if (entrenador.isPresent()) {
-            Entrenador respuesta = entrenador.get();
-            respuesta.setNombre(EDTO.getNombre());
-            respuesta.setApellido(EDTO.getApellido());
-            respuesta.setEspecialidad(EDTO.getEspecialidad());
-            respuesta.setHorarioDisponibilidad(EDTO.getHorarioDisponibilidad());
-            entrenadorRepositorio.save(respuesta);
-        }
+    //     if (entrenador.isPresent()) {
+    //         Entrenador respuesta = entrenador.get();
+    //         respuesta.setNombre(EDTO.getNombre());
+    //         respuesta.setApellido(EDTO.getApellido());
+    //         respuesta.setEspecialidad(EDTO.getEspecialidad());
+    //         respuesta.setHorarioDisponibilidad(EDTO.getHorarioDisponibilidad());
+    //         entrenadorRepositorio.save(respuesta);
+    //     }
 
-    }
+    // }
 
     @Transactional
     public void modificarEstadoActividad(EntrenadorDTO EDTO) {
