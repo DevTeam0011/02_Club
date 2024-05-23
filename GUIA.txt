@@ -111,3 +111,5 @@ Inicio  club(Intalaciones)  Disciplinas  Profesores Registrate/Inciar
 
 
 
+agregar query para buscar la clase por turno y actividad
+
