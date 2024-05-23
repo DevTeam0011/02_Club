@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.club.Club.DTO.EntrenadorDTO;
-import com.club.Club.DTO.SocioDTO;
+import com.club.Club.DTO.SocioCreateDTO;
+
 import com.club.Club.Entities.Entrenador;
 import com.club.Club.Entities.Socio;
 import com.club.Club.Others.metodosUtiles;
@@ -23,7 +24,7 @@ public class SocioServicio {
 
 
     @Transactional
-    public void CrearEntrenador(SocioDTO SDTO) throws Exception {
+    public void CrearEntrenador(SocioCreateDTO SDTO) throws Exception {
         // VALIDAR SOCIO-------------------------
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
                 new String[] { "nombre", "apellido", "documento", "fecha_nacimiento", "direccion","telefono","alta" },
@@ -52,7 +53,7 @@ public class SocioServicio {
         return socios;
     }
 // TRAER SOCIOS POR ID-----------------------------------------------
-    public Socio getOne(SocioDTO SDTO) {
+    public Socio getOne(SocioCreateDTO SDTO) {
         Optional<Socio> respuesta =socioRepositorio.findById(SDTO.getId());
         if (respuesta.isPresent()) {
             Socio newsocio = respuesta.get();
@@ -63,7 +64,7 @@ public class SocioServicio {
 // MODIFICAR SOCIO-----------------------------------------------
 
 @Transactional
-public void modificarsOCIO(SocioDTO SDTO) throws Exception {
+public void modificarsOCIO(SocioCreateDTO SDTO) throws Exception {
 
     // VALIDAR ACTIVIVDAD
     metodosUtiles.validateFieldsAreNotEmptyOrNull(
@@ -89,7 +90,7 @@ public void modificarsOCIO(SocioDTO SDTO) throws Exception {
 }
 
 @Transactional
-public void modificarEstadoSocio(SocioDTO SDTO) {
+public void modificarEstadoSocio(SocioCreateDTO SDTO) {
 
     Optional<Socio> socio = socioRepositorio.findById(SDTO.getId());
 
