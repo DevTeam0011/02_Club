@@ -1,6 +1,6 @@
 package com.club.Club.DTO;
 
-import java.util.Date;
+import com.club.Club.Entities.Entrenador;
 
 import lombok.Data;
 
@@ -12,7 +12,9 @@ public class ActividadCreateDTO {
 
     private String descripcion;
 
-    private Date horario;
+    private Double costo;
 
-    private Integer costo;
+    private boolean estado;
+
+    private Entrenador entrenador_id;
 }

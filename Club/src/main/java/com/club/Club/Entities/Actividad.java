@@ -1,13 +1,11 @@
 package com.club.Club.Entities;
 
-import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,17 +21,13 @@ public class Actividad {
 
         private String nombre; 
 
-        private String descripcion; 
-
-        @Temporal(TemporalType.TIME)
-        private Date horario; 
+        private String descripcion;  
         
-        private Integer costo; 
+        private Double costo; 
 
         private boolean estado;
 
-        
+        @ManyToOne
+        private Entrenador entrenador_id;
 
-
-        
 }

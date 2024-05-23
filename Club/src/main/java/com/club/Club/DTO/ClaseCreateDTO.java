@@ -1,20 +1,22 @@
 package com.club.Club.DTO;
-import java.time.LocalDate;
+
+import java.time.LocalTime;
 
 import com.club.Club.Entities.Entrenador;
+import com.club.Club.Enums.Turno;
 
 import lombok.Data;
 
 @Data
 public class ClaseCreateDTO {
 
-    private Long  idClase;
+    private Long  id;
 
-    private String nombre_clase;
+    private String nombre;
 
-    private String descripcion;
+    private LocalTime horario;
 
-    private LocalDate horario;
+    private Turno turno;
 
-    private Entrenador entrenador;
+    private Entrenador entrenador_id;
 }
