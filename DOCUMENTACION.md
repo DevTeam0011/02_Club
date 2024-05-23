@@ -44,70 +44,48 @@ Las tablas y sus relaciones estan especificadas en este diagrama:
 
 En cuánto a las entidades en java se verían de la siguiente forma: 
 
-#### ***ajustar***
-
 #### Actividad:
 Representa una actividad ofrecida por el club, como yoga, natación, tenis, etc. Atributos: 
-- long id
-- string nombre
-- string descripción
-- horario
-- duración
-- costo
-- capacidad máxima
+- Long id
+- String nombre
+- String descripción
+- Double costo
+- boolean estado
+- Entrenador (ManyToOne) entrenador_id
 
 #### Socio:
 Representa a una persona que es miembro del club. Atributos: 
-- id,
-- nombre, 
-- apellido,
-- documento,
-- fecha de nacimiento, 
-- dirección, 
-- número de contacto,
-- estado (alta/baja) Boolean
-- Membresia membresia
-- (Relacion many to many)
-- Actividad actividad
-- correo electrónico, etc.
+- Long id
+- String nombre,
+- String apellido
+- Integer documento
+- LocalDate fecha de nacimiento
+- String dirección
+- String telefono
+- boolean alta
+- Actividad (ManyToMany) actividad
+- Clase (ManyToMany) clase
+- Membresia (ManyToOne) membresia
 
 #### Entrenador:
 Representa a un entrenador o instructor que imparte clases o actividades en club.
 Atributos: 
-- id,
-- nombre, 
-- apellido, 
-- especialidad, 
-- horario de disponibilidad, etc.
-
-#### Reserva:
-Representa la reserva de una actividad realizada por un socio.
-Atributos: 
-- id,
-- socio (referencia al socio que hizo la reserva), 
-- actividad (referencia a la actividad reservada), 
-- fecha y hora de la reserva, 
-- estado (confirmada, pendiente, cancelada), etc.
+- Long id
+- String nombre 
+- String apellido
+- String especialidad
+- boolean estado
 
 #### Clase:
 Representa una clase específica impartida por un entrenador, como "Clase de Yocon María".
 Atributos: 
-- id,
-- nombre de la clase, 
-- descripción, 
-- horario, 
-- duración, 
-- entrenador (referencia al entrenador que la imparte), etc.
+- Long id
+- String nombre
+- LocalTime horario
+- Turno(enum) turno
+- Entrenador(ManyToOne) entrenador_id
 
-#### Instalación:
-Representa una instalación o espacio dentro del club, como una piscina, una cancde tenis, un gimnasio, etc.
-Atributos: 
-- id
-- nombre, 
-- descripción,
-- -img
-
-#### Membresía:
+#### ❓Membresía:
 Representa una membresía o tipo de suscripción que un socio puede tener en el club.
 Atributos: 
 - id,
