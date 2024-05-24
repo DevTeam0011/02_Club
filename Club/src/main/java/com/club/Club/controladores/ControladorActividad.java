@@ -18,10 +18,10 @@ import com.club.Club.Services.ActividadServicio;
 @RequestMapping("/api/actividad")
 public class ControladorActividad {
 
-
-    @Autowired
-    ActividadServicio actividadServicio;
-// LISTAR ACTIVIDAD
+   @Autowired
+   ActividadServicio actividadServicio;
+   
+   // LISTAR ACTIVIDAD
     @GetMapping("")
     public List<Actividad> listarActividades(){
         List<Actividad> list = actividadServicio.listarActividades();

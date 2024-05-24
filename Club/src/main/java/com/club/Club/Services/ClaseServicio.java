@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.club.Club.DTO.ClaseCreateDTO;
-import com.club.Club.DTO.SocioCreateDTO;
 import com.club.Club.Entities.Clase;
 import com.club.Club.Entities.Entrenador;
-import com.club.Club.Entities.Socio;
 import com.club.Club.Others.metodosUtiles;
 import com.club.Club.Repositories.ClaseRepositorio;
 import com.club.Club.Repositories.EntrenadorRepositorio;
@@ -50,7 +48,7 @@ public class ClaseServicio {
     }
     @Transactional(readOnly = true)
     public List<Clase> listarSocio() {
-        List<Clase> clase = new ArrayList();
+        List<Clase> clase = new ArrayList<>();
         clase = claseRepositorio.findAll();
         return clase;
     }

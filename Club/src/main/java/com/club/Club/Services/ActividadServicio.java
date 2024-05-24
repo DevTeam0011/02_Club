@@ -5,18 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.MergedAnnotation.Adapt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.club.Club.DTO.ActividadCreateDTO;
 import com.club.Club.Entities.Actividad;
-import com.club.Club.Entities.Entrenador;
 import com.club.Club.Others.metodosUtiles;
 import com.club.Club.Repositories.ActividadRepositorio;
 import com.club.Club.Repositories.EntrenadorRepositorio;
-
-import ch.qos.logback.core.joran.conditional.IfAction;
 
 @Service
 public class ActividadServicio {
@@ -53,7 +49,7 @@ public class ActividadServicio {
     // LISTAR ACTIVIDADES----------------------------------------------- YA ESTA 
     @Transactional(readOnly = true)
     public List<Actividad> listarActividades() {
-        List<Actividad> actividades = new ArrayList();
+        List<Actividad> actividades = new ArrayList<>();
         actividades = activRepositorio.findAll();
         return actividades;
     }
