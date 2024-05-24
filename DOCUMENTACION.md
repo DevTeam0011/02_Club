@@ -1,10 +1,10 @@
 # Documentación del proyecto
 
 Aquí se encontrará todo lo relacionado al proyecto en cuanto a:
-- Información general
-- Arquitectura
-- Contenido del mismo
-- Código
+- [Información general](https://github.com/GGNahuel/Proyecto-001-egg/blob/main/DOCUMENTACION.md#informaci%C3%B3n-general)
+- [Arquitectura](https://github.com/GGNahuel/Proyecto-001-egg/blob/main/DOCUMENTACION.md#arquitectura)
+- [Contenido del mismo](https://github.com/GGNahuel/Proyecto-001-egg/blob/main/DOCUMENTACION.md#contenido-del-mismo)
+- [Código](https://github.com/GGNahuel/Proyecto-001-egg/blob/main/DOCUMENTACION.md#c%C3%B3digo)
 - ...
   
 ## Información general
@@ -85,7 +85,7 @@ Atributos:
 - Turno(enum) turno
 - Entrenador(ManyToOne) entrenador_id
 
-#### ❓Membresía:
+#### 🔄Membresía:
 Representa una membresía o tipo de suscripción que un socio puede tener en el club.
 Atributos: 
 - id,
@@ -102,7 +102,7 @@ Atributos:
 
 La pagina permitira que el socio pueda inciar secion o registrarse, inscribirse en actividades y poder solicitar la alta/baja de la membresia.
 
-El socio podra ver listado de todas las activdades a las cuales este inscripto, con sus respectivo de talle.
+El socio podra ver listado de todas las activdades a las cuales este inscripto, con sus respectivo detalle.
 
 El admin podra dar de baja/alta profesores o disciplinas y inhabilitar socios por falta de pago.
 
@@ -118,16 +118,18 @@ Dentro de esta clase irán métodos o propiedades que se pueden usar de forma gl
 - *checkArraysHaveSameLength(array1, array2)*: Método privado de la clase que se usa para comprobar que los arrays que se ingresan tengan la misma longitud.
   
 - *validateFieldsAreNotEmptyOrNull(String[] fieldNames, Object... fields)*: Método estático de acceso público que permite validar que los campos ingresados no sean nulos o estén vacíos (en caso de que sean de tipo string o list), caso contrario arrojaría una excepción.
-  - String[] fieldNames: recibe un array con los **nombres** de los campos, que en caso de que se arroje la excepción será mostrado de la forma que se ingrese en el mensaje de esta. 
+  - String[] fieldNames: recibe un array con los ***nombres*** de los campos, que en caso de que se arroje la excepción será mostrado de la forma que se ingrese en el mensaje de esta. 
   
-  - Object... fields: después de ingresar el array de strings se podrá poner tantos campos como sea necesario. Estos deben ser los **valores** de los campos. (el conjunto de *fields* que se ingresen será transformado en un array de tipo Object).
+  - Object... fields: después de ingresar el array de strings se podrá poner tantos campos como sea necesario. Estos deben ser los ***valores*** de los campos. (el conjunto de *fields* que se ingresen será transformado en un array de tipo Object).
   - **Importante**: cuando se implementa este metodo, los valores que se quieran validar, *fields*, deben estar colocados en el mismo orden que se colocan en el *fieldNames*.
   - *Ejemplo de uso*:
     ```java
-    /* suponiendo que antes se obtuvo de una forma x un objeto con las propiedades que se mencionan a continuación. El objeto en este caso es "socio", y se quiere solo validar el id, nombre y su estado de membresía (suponiendo que cuenta con esas propiedades) */
+    /* suponiendo que antes se obtuvo de una forma x un objeto con las propiedades que se mencionan a continuación. 
+    El objeto en este caso es "socio", y se quiere solo validar el id, nombre y su estado de membresía 
+    (suponiendo que cuenta con esas propiedades) */
     metodosUtiles.validateFieldsAreNotEmptyOrNull(
       new String[]{"id", "nombre", "estado de membresía"}, // fieldNames
       socio.getId(), socio.getNombre(), socio.getEstadoMembresia() //fields
     )
     ```
-    La excepción recibe un valor y su mensaje es `"El campo " + valor + " ingresado no puede ser nulo ni estar vacío."`, y suponiendo que en este ejemplo el estado de la membresía ingresado es `null` la excepción arrojará: *"El campo 'estado de la membresía' ingresado no puede ser nulo ni estar vacío."*
+    La excepción recibe un valor y su mensaje es `"El campo " + valor + " ingresado no puede ser nulo ni estar vacío."`, y suponiendo que en este ejemplo el estado de la membresía ingresado es `null` la excepción arrojará: `"El campo 'estado de la membresía' ingresado no puede ser nulo ni estar vacío."`
