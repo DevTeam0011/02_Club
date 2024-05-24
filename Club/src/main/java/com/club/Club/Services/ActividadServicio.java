@@ -25,14 +25,15 @@ public class ActividadServicio {
     @Autowired
     EntrenadorRepositorio entrenadorRepositorio;
 
-    // CREAR ACTIVIDAD-----------------------------------------------
+    // CREAR ACTIVIDAD-----------------------------------------------ya esta 
     @Transactional
     public void CrearActividad(ActividadCreateDTO ADTO) throws Exception {
         // VALIDAR ACTIVIVDAD
+        System.out.println(ADTO.getNombre());
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "nombre", "descripcion", "costo", "estado", "entrenador" }, ADTO.getNombre(),
+                new String[] { "nombre", "descripcion", "costo", "estado" }, ADTO.getNombre(), //volver agregar entrenador_id
                 ADTO.getDescripcion(),
-                ADTO.getCosto(), ADTO.isEstado(), ADTO.getEntrenador_id());
+                ADTO.getCosto(), ADTO.isEstado());
 
         Actividad newAct = new Actividad();
         newAct.setNombre(ADTO.getNombre());
@@ -40,16 +41,16 @@ public class ActividadServicio {
         newAct.setCosto(ADTO.getCosto());
         newAct.setEstado(true);
 
-        Entrenador entrenador = entrenadorRepositorio.findById(ADTO.getEntrenador_id().getId())
+        /* Entrenador entrenador = entrenadorRepositorio.findById(ADTO.getEntrenador_id().getId())
                 .orElseThrow(() -> new Exception("No se encontro entrenador con ese id"));
 
-        newAct.setEntrenador_id(entrenador);
+        newAct.setEntrenador_id(entrenador); */
 
         activRepositorio.save(newAct);
 
     }
 
-    // LISTAR ACTIVIDADES-----------------------------------------------
+    // LISTAR ACTIVIDADES----------------------------------------------- YA ESTA 
     @Transactional(readOnly = true)
     public List<Actividad> listarActividades() {
         List<Actividad> actividades = new ArrayList();
@@ -57,7 +58,7 @@ public class ActividadServicio {
         return actividades;
     }
 
-    // TRAER ACTIVIDAD POR ID-----------------------------------------------
+    // TRAER ACTIVIDAD POR ID-----------------------------------------------ya esta 
     public Actividad getOne(ActividadCreateDTO ADTO) {
         Optional<Actividad> respuesta = activRepositorio.findById(ADTO.getId());
         if (respuesta.isPresent()) {
@@ -67,14 +68,14 @@ public class ActividadServicio {
         return null;
     }
 
-    // MODIFICAR ACTIVIDAD-----------------------------------------------
+    // MODIFICAR ACTIVIDAD-----------------------------------------------ya esta 
     @Transactional
     public void modificarActividad(ActividadCreateDTO ADTO) throws Exception {
         // VALIDAR ACTIVIVDAD
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "id", "nombre", "descripcion", "costo", "estado", "entrenador" }, ADTO.getId(), ADTO.getNombre(),
+                new String[] { "id", "nombre", "descripcion", "costo", "estado" }, ADTO.getId(), ADTO.getNombre(),//poner entrenador 
                 ADTO.getDescripcion(),
-                ADTO.getCosto(), ADTO.isEstado(), ADTO.getEntrenador_id());
+                ADTO.getCosto(), ADTO.isEstado());
 
         Actividad newAct = activRepositorio.findById(ADTO.getId()).orElseThrow(
             () -> new Exception("El id ingresado de la actividad no fue encontrado")
@@ -85,11 +86,11 @@ public class ActividadServicio {
         newAct.setCosto(ADTO.getCosto());
         newAct.setEstado(true);
 
-        Entrenador entrenador = entrenadorRepositorio.findById(ADTO.getEntrenador_id().getId()).orElseThrow(
+        /* Entrenador entrenador = entrenadorRepositorio.findById(ADTO.getEntrenador_id().getId()).orElseThrow(
             () -> new Exception("No se encontro entrenador con ese id")
         );
 
-        newAct.setEntrenador_id(entrenador);
+        newAct.setEntrenador_id(entrenador); */
 
         activRepositorio.save(newAct);
     }

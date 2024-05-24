@@ -17,4 +17,5 @@ public class ActividadCreateDTO {
     private boolean estado;
 
     private Entrenador entrenador_id;
+    
 }
