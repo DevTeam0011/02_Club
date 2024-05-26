@@ -29,7 +29,7 @@ public class ControladorActividad {
           return list;
     }
 
-     // CREAR ACTIVIDAD-
+     // CREAR ACTIVIDAD
 
      @PostMapping("")
      public void crearActividad(@RequestBody ActividadCreateDTO ADTO)throws Exception{
