@@ -3,6 +3,7 @@ package com.club.Club.controladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +17,7 @@ import com.club.Club.Services.ActividadServicio;
 
 @RestController
 @RequestMapping("/api/actividad")
+@CrossOrigin(value = "http://localhost:3000") //Esta anotacion se agrega para hacer peticiones desde el FRONT-END
 public class ControladorActividad {
 
 
