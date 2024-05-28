@@ -26,18 +26,18 @@ public class ClaseServicio {
     @Transactional
     public void crearClase(ClaseCreateDTO CDTO) throws Exception {
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "nombre", "horario", "turno", "entrenador_id" }, CDTO.getNombre(),
-                CDTO.getHorario(), CDTO.getTurno(), CDTO.getEntrenador_id());
+                new String[] { "nombre", "horario", "turno" }, CDTO.getNombre(),
+                CDTO.getHorario(), CDTO.getTurno());
 
         Clase newclase = new Clase();
         newclase.setNombre(CDTO.getNombre());
         newclase.setHorario(CDTO.getHorario());
         newclase.setTurno(CDTO.getTurno());
 
-        Entrenador entrenador = entrenadorRepositorio.findById(CDTO.getEntrenador_id().getId())
-                .orElseThrow(() -> new Exception("No se encontro entrenador con ese id"));
+        // Entrenador entrenador = entrenadorRepositorio.findById(CDTO.getEntrenador_id().getId())
+        //         .orElseThrow(() -> new Exception("No se encontro entrenador con ese id"));
 
-        newclase.setEntrenador_id(entrenador);
+        // newclase.setEntrenador_id(entrenador);
         claseRepositorio.save(newclase);
 
     }
