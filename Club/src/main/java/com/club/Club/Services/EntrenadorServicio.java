@@ -10,41 +10,44 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.club.Club.DTO.EntrenadorDTO;
 import com.club.Club.Entities.Entrenador;
+import com.club.Club.Others.metodosUtiles;
 import com.club.Club.Repositories.EntrenadorRepositorio;
 
 @Service
 public class EntrenadorServicio {
     @Autowired
-    EntrenadorRepositorio entrenadorRepositorio;
+    EntrenadorRepositorio eRepositorio;
 
-    // @Transactional
-    // public void CrearEntrenador(EntrenadorDTO EDTO) throws Exception {
-        // // VALIDAR ACTIVIVDAD
-        // metodosUtiles.validateFieldsAreNotEmptyOrNull(
-        //  new String[] { "nombre", "apellido", "especialidad", "horarioDisponibilidad"}, EDTO.getNombre(),
-        //  EDTO.getApellido(),EDTO.getEspecialidad(), EDTO.getHorarioDisponibilidad());
+    @Transactional
+    public void CrearEntrenador(EntrenadorDTO EDTO) throws Exception {
+        // VALIDAR ACTIVIDAD
+        metodosUtiles.validateFieldsAreNotEmptyOrNull(
+                new String[] { "nombre", "apellido", "especialidad", "estado" },
+                EDTO.getNombre(),
+                EDTO.getApellido(),
+                EDTO.getEspecialidad(),
+                EDTO.isEstado());
 
-        // Entrenador newEntre = new Entrenador();
-        // newEntre.setNombre(EDTO.getNombre());
-        // newEntre.setApellido(EDTO.getApellido());
-        // newEntre.setEspecialidad(EDTO.getEspecialidad());
-        // newEntre.setHorarioDisponibilidad(EDTO.getHorarioDisponibilidad());
+        Entrenador newEntrenador = new Entrenador();
+        newEntrenador.setNombre(EDTO.getNombre());
+        newEntrenador.setApellido(EDTO.getApellido());
+        newEntrenador.setEspecialidad(EDTO.getEspecialidad());
+        newEntrenador.setEstado(EDTO.isEstado());
 
-    // // EntrenadorRepositorio.save(newEntre);
-
-    // }
+        eRepositorio.save(newEntrenador);
+    }
 
     // LISTAR ACTIVIDADES-----------------------------------------------
     @Transactional(readOnly = true)
-    public List<Entrenador> listarActividades() {
+    public List<Entrenador> listarEntrenador() {
         List<Entrenador> entrenadores = new ArrayList<>();
-        entrenadores = entrenadorRepositorio.findAll();
+        entrenadores = eRepositorio.findAll();
         return entrenadores;
     }
 
     // TRAER AENTRENADOR POR ID-----------------------------------------------
     public Entrenador getOne(EntrenadorDTO EDTO) {
-        Optional<Entrenador> respuesta = entrenadorRepositorio.findById(EDTO.getId());
+        Optional<Entrenador> respuesta = eRepositorio.findById(EDTO.getId());
         if (respuesta.isPresent()) {
             Entrenador newActividad = respuesta.get();
             return newActividad;
@@ -53,45 +56,43 @@ public class EntrenadorServicio {
     }
 
     // MODIFICAR ENTRENADOR-----------------------------------------------
-    // @Transactional
-    // public void modificarEntrenador(EntrenadorDTO EDTO) throws Exception {
-    // // VALIDAR ACTIVIVDAD
-    // metodosUtiles.validateFieldsAreNotEmptyOrNull(
-    // new String[] { "nombre", "apellido", "especialidad", "horarioDisponibilidad"
-    // }, EDTO.getNombre(),
-    // EDTO.getApellido(),
-    // EDTO.getEspecialidad(), EDTO.getHorarioDisponibilidad());
+    @Transactional
+    public void modificarEntrenador(EntrenadorDTO EDTO) throws Exception {
+        // VALIDAR ACTIVIDAD
+        metodosUtiles.validateFieldsAreNotEmptyOrNull(
+                new String[] { "nombre", "apellido", "especialidad", "estado" },
+                EDTO.getNombre(),
+                EDTO.getApellido(),
+                EDTO.getEspecialidad(),
+                EDTO.isEstado());
 
-    // Optional<Entrenador> entrenador =
-    // entrenadorRepositorio.findById(EDTO.getId());
+        Optional<Entrenador> entrenador = eRepositorio.findById(EDTO.getId());
 
-    // if (entrenador.isPresent()) {
-    // Entrenador respuesta = entrenador.get();
-    // respuesta.setNombre(EDTO.getNombre());
-    // respuesta.setApellido(EDTO.getApellido());
-    // respuesta.setEspecialidad(EDTO.getEspecialidad());
-    // respuesta.setHorarioDisponibilidad(EDTO.getHorarioDisponibilidad());
-    // entrenadorRepositorio.save(respuesta);
-    // }
+        if (entrenador.isPresent()) {
+            Entrenador respuesta = entrenador.get();
+            respuesta.setNombre(EDTO.getNombre());
+            respuesta.setApellido(EDTO.getApellido());
+            respuesta.setEspecialidad(EDTO.getEspecialidad());
+            respuesta.setEstado(EDTO.isEstado());
+            eRepositorio.save(respuesta);
+        }
 
-    // }
+    }
 
     @Transactional
-    public void modificarEstadoActividad(EntrenadorDTO EDTO) {
+    public void modificarEstadoEntrenador(EntrenadorDTO EDTO) {
 
-        Optional<Entrenador> entrenador = entrenadorRepositorio.findById(EDTO.getId());
+        Optional<Entrenador> entrenador = eRepositorio.findById(EDTO.getId());
 
         if (entrenador.isPresent()) {
             Entrenador newEntre = entrenador.get();
 
-            /*
-             * if(newEntre.isEstado()){
-             * newEntre.setEstado(false);
-             * }else {
-             * newActividad.setEstado(true);
-             * }
-             * }
-             */
+            if (newEntre.isEstado()) {
+                newEntre.setEstado(false);
+            } else {
+                newEntre.setEstado(true);
+            }
+            eRepositorio.save(newEntre);
         }
 
     }
