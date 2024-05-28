@@ -24,4 +24,6 @@ public class Entrenador {
   private String especialidad;
   
   private boolean estado;
+
 }
+
