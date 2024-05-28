@@ -1,1 +1,2 @@
 CREATE DATABASE clubdd;
+-- DROP DATABASE clubdd;
