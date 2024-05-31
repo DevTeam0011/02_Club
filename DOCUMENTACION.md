@@ -97,8 +97,13 @@ Atributos:
 - Inicio  
 - Club(Instalaciones)  
 - Actividades
+  - Football
+  - Rugby
+  - Tenis
+  - (ejemplos)
 - Profesores 
 - Registrate/Inciar
+- Noticias
 
 La pagina permitira que el socio pueda inciar secion o registrarse, inscribirse en actividades y poder solicitar la alta/baja de la membresia.
 
