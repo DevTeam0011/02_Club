@@ -20,7 +20,7 @@ public class SocioServicio {
     SocioRepositorio socioRepositorio;
 
     @Transactional
-    public void CrearEntrenador(SocioCreateDTO SDTO) throws Exception {
+    public void CrearSocio(SocioCreateDTO SDTO) throws Exception {
         // VALIDAR SOCIO-------------------------
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
                 new String[] { "nombre", "apellido", "documento", "fecha_nacimiento", "direccion", "telefono", "alta" },
