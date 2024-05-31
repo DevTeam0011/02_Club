@@ -25,7 +25,7 @@ public class ControladorSocio {
     @PostMapping("")
     public void crearClase(@RequestBody SocioCreateDTO SDTO) throws Exception {
 
-        socioServicio.CrearEntrenador(SDTO);
+        socioServicio.CrearSocio(SDTO);
     }
 
    // LISTAR CLASE
