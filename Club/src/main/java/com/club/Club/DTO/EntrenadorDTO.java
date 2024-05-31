@@ -16,3 +16,4 @@ public class EntrenadorDTO {
     private boolean estado;
 
 }
+

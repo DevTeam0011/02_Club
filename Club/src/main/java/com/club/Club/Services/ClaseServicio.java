@@ -22,32 +22,29 @@ public class ClaseServicio {
     @Autowired
     EntrenadorRepositorio entrenadorRepositorio;
 
-    //Crear una clase
+    // Crear una clase
     @Transactional
-    public void crearClase(ClaseCreateDTO CDTO) throws Exception{
+    public void crearClase(ClaseCreateDTO CDTO) throws Exception {
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "nombre", "horario", "turno","entrenador_id" }, CDTO.getNombre(), 
-                CDTO.getHorario(), CDTO.getTurno(), CDTO.getEntrenador_id());
+                new String[] { "nombre", "horario", "turno" }, CDTO.getNombre(),
+                CDTO.getHorario(), CDTO.getTurno());
 
-                Clase newclase = new Clase();
-                 newclase.setNombre(CDTO.getNombre());
-                 newclase.setHorario(CDTO.getHorario());
-                 newclase.setTurno(CDTO.getTurno());
-                 
+        Clase newclase = new Clase();
+        newclase.setNombre(CDTO.getNombre());
+        newclase.setHorario(CDTO.getHorario());
+        newclase.setTurno(CDTO.getTurno());
 
-                 Entrenador entrenador = entrenadorRepositorio.findById(CDTO.getEntrenador_id().getId())
-                .orElseThrow(() -> new Exception("No se encontro entrenador con ese id"));
+        // Entrenador entrenador = entrenadorRepositorio.findById(CDTO.getEntrenador_id().getId())
+        //         .orElseThrow(() -> new Exception("No se encontro entrenador con ese id"));
 
-                newclase.setEntrenador_id(entrenador);
-                claseRepositorio.save(newclase);
-                 
-
-
-        
+        // newclase.setEntrenador_id(entrenador);
+        claseRepositorio.save(newclase);
 
     }
+
+    // LISTAR CLASES-----------------------------------------------------
     @Transactional(readOnly = true)
-    public List<Clase> listarSocio() {
+    public List<Clase> listarClases() {
         List<Clase> clase = new ArrayList<>();
         clase = claseRepositorio.findAll();
         return clase;
@@ -55,55 +52,56 @@ public class ClaseServicio {
 
     // TRAER SOCIOS POR ID-----------------------------------------------
     public Clase getOne(ClaseCreateDTO CDTO) {
-        Optional<Clase> respuesta =claseRepositorio.findById(CDTO.getId());
+        Optional<Clase> respuesta = claseRepositorio.findById(CDTO.getId());
         if (respuesta.isPresent()) {
             Clase newclase = respuesta.get();
             return newclase;
         }
         return null;
     }
-// MODIFICAR SOCIO-----------------------------------------------
 
-@Transactional
-public void modificarClase(ClaseCreateDTO CDTO) throws Exception {
+    // MODIFICAR CLASE-----------------------------------------------
+    @Transactional
+    public void modificarClase(ClaseCreateDTO CDTO) throws Exception {
 
-    // VALIDAR ACTIVIVDAD
-    metodosUtiles.validateFieldsAreNotEmptyOrNull(
-            new String[] { "nombre", "horario", "turno","entrenador_id" }, CDTO.getNombre(),
-            CDTO.getNombre(),
-            CDTO.getHorario(), CDTO.getTurno(), CDTO.getEntrenador_id());
+        // VALIDAR ACTIVIVDAD
+        metodosUtiles.validateFieldsAreNotEmptyOrNull(
+                new String[] { "nombre", "horario", "turno", "entrenador_id" }, CDTO.getNombre(),
+                CDTO.getNombre(),
+                CDTO.getHorario(), CDTO.getTurno(), CDTO.getEntrenador_id());
 
-    Optional<Clase> clase =  claseRepositorio.findById(CDTO.getId()); //claseRepositorio.findById(CDTO.getId());
+        Optional<Clase> clase = claseRepositorio.findById(CDTO.getId()); // claseRepositorio.findById(CDTO.getId());
 
-    if (clase.isPresent()) {
-        Clase respuesta = clase.get();
-        respuesta.setNombre(CDTO.getNombre());
-        respuesta.setHorario(CDTO.getHorario());
-        respuesta.setTurno(CDTO.getTurno());
-        respuesta.setEntrenador_id((CDTO.getEntrenador_id()));
-        
-        claseRepositorio.save(respuesta);
+        if (clase.isPresent()) {
+            Clase respuesta = clase.get();
+            respuesta.setNombre(CDTO.getNombre());
+            respuesta.setHorario(CDTO.getHorario());
+            respuesta.setTurno(CDTO.getTurno());
+            respuesta.setEntrenador_id((CDTO.getEntrenador_id()));
+
+            claseRepositorio.save(respuesta);
+        }
+
     }
-    
 
-}
-@Transactional
-public void modificarEstadoClase(ClaseCreateDTO CDTO) {
+    @Transactional
+    public void modificarEstadoClase(ClaseCreateDTO CDTO) {
 
-    Optional<Clase> clase = claseRepositorio.findById(CDTO.getId());
+        Optional<Clase> clase = claseRepositorio.findById(CDTO.getId());
 
-    if (clase.isPresent()) {
-        Clase newsocio = clase.get();
+        if (clase.isPresent()) {
+            Clase newsocio = clase.get();
 
-        
-          /* if(newclase.isAlta()){
-            newsocio.setAlta(false);
-          }else {
-            newsocio.setAlta(true);
-          }
-          } */
-         
+            /*
+             * if(newclase.isAlta()){
+             * newsocio.setAlta(false);
+             * }else {
+             * newsocio.setAlta(true);
+             * }
+             * }
+             */
+
+        }
+
     }
-    
-}
 }

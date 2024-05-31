@@ -27,7 +27,7 @@ public class ActividadServicio {
         // VALIDAR ACTIVIVDAD
         System.out.println(ADTO.getNombre());
         metodosUtiles.validateFieldsAreNotEmptyOrNull(
-                new String[] { "nombre", "descripcion", "costo", "estado" }, ADTO.getNombre(), //volver agregar entrenador_id
+                new String[] { "nombre", "descripcion", "costo", "estado","nombre" }, ADTO.getNombre(), //volver agregar entrenador_id
                 ADTO.getDescripcion(),
                 ADTO.getCosto(), ADTO.isEstado());
 
