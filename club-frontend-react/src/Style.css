@@ -1,10 +1,22 @@
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+
+   > section {
+      width: 100%;
+      max-width: 1200px;
+   }
+}
+
 .galeriaInicio {
    display: flex;
    justify-content: flex-start;
    align-items: center;
    flex-wrap: nowrap;
    width: 100%;
-   max-width: 9000px;
+   /* max-width: 900px; */
    overflow: hidden;
 
    > .containerImg {

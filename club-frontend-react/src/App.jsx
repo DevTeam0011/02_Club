@@ -9,9 +9,11 @@ function App() {
 
   return (
     <>
-    <Navbar></Navbar>
-    <Galeria></Galeria>
-      <h1>hola mundo!!!</h1>
+      <Navbar></Navbar>
+      <main>
+        <h1>hola mundo!!!</h1>
+        <Galeria></Galeria>
+      </main>
     </>
   )
 }
