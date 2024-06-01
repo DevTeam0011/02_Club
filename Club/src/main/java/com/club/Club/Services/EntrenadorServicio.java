@@ -46,8 +46,8 @@ public class EntrenadorServicio {
     }
 
     // TRAER AENTRENADOR POR ID-----------------------------------------------
-    public Entrenador getOne(EntrenadorDTO EDTO) {
-        Optional<Entrenador> respuesta = eRepositorio.findById(EDTO.getId());
+    public Entrenador getOne(Long id) {
+        Optional<Entrenador> respuesta = eRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Entrenador newActividad = respuesta.get();
             return newActividad;

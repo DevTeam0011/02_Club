@@ -1,5 +1,6 @@
 package com.club.Club.controladores;
 
+import java.security.spec.EdDSAParameterSpec;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,15 +45,15 @@ public class ControladorEntrenador {
     }
 
     // TRAER ENTRENADOR POR ID
-    @GetMapping("/clase_id/")
-    public Entrenador traerClaseId(@RequestBody EntrenadorDTO EDTO) {
-        return eServicio.getOne(EDTO);
-
+    @GetMapping("/{id}")
+    public Entrenador traerEntrenadorId(@PathVariable Long id) {
+        return eServicio.getOne(id);
     }
 
     // MODIFICAR ESTADO (DAR ALTA/DAR BAJA)
-    @PutMapping("/modificar_estado")
-    public void modificarEstadoEntrenador(@RequestBody EntrenadorDTO EDTO) {
+    @PutMapping("/modificar/{id}")
+    public void modificarEstadoEntrenador(@PathVariable Long id,@RequestBody EntrenadorDTO EDTO) {
+        EDTO.setId(id);
         eServicio.modificarEstadoEntrenador(EDTO);
 
     }

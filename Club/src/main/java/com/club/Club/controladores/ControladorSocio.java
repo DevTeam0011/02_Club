@@ -3,6 +3,7 @@ package com.club.Club.controladores;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,8 +39,8 @@ public class ControladorSocio {
 
   // TRAER ACTIVIDAD POR ID
   @GetMapping("/socio_id/")
-  public Socio traersocioId(@RequestBody SocioCreateDTO SDTO) {
-      return socioServicio.getOne(SDTO);
+  public Socio traersocioId(@PathVariable Long id) {
+      return socioServicio.getOne(id);
 
   }
 

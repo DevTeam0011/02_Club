@@ -49,8 +49,8 @@ public class SocioServicio {
     }
 
     // TRAER SOCIOS POR ID-----------------------------------------------
-    public Socio getOne(SocioCreateDTO SDTO) {
-        Optional<Socio> respuesta = socioRepositorio.findById(SDTO.getId());
+    public Socio getOne(Long id) {
+        Optional<Socio> respuesta = socioRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Socio newsocio = respuesta.get();
             return newsocio;

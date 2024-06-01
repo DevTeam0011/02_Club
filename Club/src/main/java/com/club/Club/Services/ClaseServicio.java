@@ -50,9 +50,9 @@ public class ClaseServicio {
         return clase;
     }
 
-    // TRAER SOCIOS POR ID-----------------------------------------------
-    public Clase getOne(ClaseCreateDTO CDTO) {
-        Optional<Clase> respuesta = claseRepositorio.findById(CDTO.getId());
+    // TRAER CLASE POR ID-----------------------------------------------
+    public Clase getOne(Long id) {
+        Optional<Clase> respuesta = claseRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Clase newclase = respuesta.get();
             return newclase;
