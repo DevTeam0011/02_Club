@@ -70,3 +70,7 @@ BACKEND
     Clase
     Entrenador
     Socio
+
+
+----------FRONT END----------------------
+  
