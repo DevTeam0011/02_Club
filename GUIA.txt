@@ -1,115 +1,72 @@
-FRONTEND
-  JS
-  React
-___________________________________________________________________________________
+Referencias:
+  __ (sin nada) sin hacer
+  ✅ terminado
+  🔄 en proceso, incompleto
+  ❌ rechazado (no borrar)
+  ❓ característica a confirmar
+  ⬆️ importante
+  ⚠️ revisar
 
-BACKEND:
-  Java
-  Springboot
-  MySQL
+BACKEND
+  API
 
-  Estructura de capas:
-    Controlador
-    Servicio
-    Repositorio
-    Entidad
-----------------------------------------------------------------------------------------------
-  Entidades:
-    ✅📌Actividad:
-      Representa una actividad ofrecida por el club, como yoga, natación, tenis, etc.
-      Atributos: 
-        id,
-        string nombre, 
-        string descripción, 
-        horario, 
-        duración, 
-        costo, 
-        capacidad máxima, etc.
+  🔄Entidades
+    ✅Actividad
+      id; nombre; descripcion; costo; estado; entrenador_id;
+    🔄Clase
+      ✅id, ✅nombre, ✅horario, ✅turno, ✅entrenador_id, actividad
+    ✅Entrenador
+      id; nombre; apellido; especialidad; estado
+    🔄Socio
+      ✅id; ✅nombre; ✅apellido; ✅documento; ✅fecha_nacimiento; ✅direccion; ✅telefono; ✅alta; ✅clase; ✅actividad; membresia
+    Membresía
+      id; nombre; beneficios(lista de un enum❓);
 
-    ✅📌Socio:
-      Representa a una persona que es miembro del club.
-      Atributos: 
-        id,
-        nombre, 
-        apellido,
-        documento,
-        fecha de nacimiento, 
-        dirección, 
-        número de contacto,
-        estado (alta/baja) Boolean
-        Membresia membresia
-        (Relacion many to many)
-        Actividad actividad
-        correo electrónico, etc.
+  DTOs
+    ✅Actividad
+    ✅Clase
+    ✅Entrenador
+    ✅Socio
+    Membresía
 
-    ✅📌Entrenador:
-      Representa a un entrenador o instructor que imparte clases o actividades en el club.
-      Atributos: 
-        id,
-        nombre, 
-        apellido, 
-        especialidad, 
-        horario de disponibilidad, etc.
+  Repositorios
+    🔄Actividad
+      query para buscar activdades según el entrenador
+    🔄Clase
+      query para buscar clases según la actividad
+    ✅Entrenador
+    🔄Socio
+      query para obtener los socios según su membresia
+    Membresía
+  
+  Servicios
+    ✅Actividad
+      ✅Obtener todas
+      ✅Obtener por id
+      ✅Crear
+      ✅Modificar
+      🔄Modificar estado de alta
+    ✅Clase
+      ✅Obtener todas
+      ✅Obtener por id
+      ✅Crear
+      ✅Modificar
+      🔄Modificar estado de alta
+    ✅Entrenador
+      ✅Obtener todas
+      ✅Obtener por id
+      ✅Crear
+      ✅Modificar
+      🔄Modificar estado de alta
+    ✅Socio
+      ✅Obtener todas
+      ✅Obtener por id
+      ✅Crear
+      ✅Modificar
+      🔄Modificar estado de alta
 
-    ✅Reserva:
-      Representa la reserva de una actividad realizada por un socio.
-      Atributos: 
-        id,
-        socio (referencia al socio que hizo la reserva), 
-        actividad (referencia a la actividad reservada), 
-        fecha y hora de la reserva, 
-        estado (confirmada, pendiente, cancelada), etc.
-
-    ❓Pago:
-      Representa un pago realizado por un socio por una reserva o membresía.
-      Atributos: 
-        id,
-        socio (referencia al socio que realizó el pago), 
-        monto, fecha y hora del pago, método de pago, estado (pendiente, completado), etc.
-
-    ✅Clase:
-      Representa una clase específica impartida por un entrenador, como "Clase de Yoga con María".
-      Atributos: 
-        id,
-        nombre de la clase, 
-        descripción, 
-        horario, 
-        duración, 
-        entrenador (referencia al entrenador que la imparte), etc.
-
-    ✅Instalación:
-      Representa una instalación o espacio dentro del club, como una piscina, una cancha de tenis, un gimnasio, etc.
-      Atributos: 
-        id
-        nombre, 
-        descripción,
-        -img
-
-    ✅Membresía:
-      Representa una membresía o tipo de suscripción que un socio puede tener en el club.
-      Atributos: 
-        id,
-        tipo de membresía (mensual, anual, etc.),
-        beneficios incluidos,
-        costo, etc.
-
-
-
---------------------------------------------------------------------
-
-Inicio  club(Intalaciones)  Disciplinas  Profesores Registrate/Inciar
-
-✅ La pagina permitira que el socio pueda inciar secion o registrarse, inscribirse en actividades y poder solicitar la alta/baja de la membresia.
-✅ El socio podra ver listado de todas las activdades a las cuales este inscripto, con sus respectivo de talle.
-✅ El admin podra dar de baja/alta profesores o disciplinas y inhabilitar socios por falta de pago.
-✅ Brindar datos de contacto, redes sociales.
-✅ Galeria de instalaciones.
----------------------------------------------------
-✅ CRUD - USUARIO
-✅ CRUD - ENTRENADORES
-✅ RESERVA - INSTALACIONES(En base a la membresia mensual/anual,etc.).
-
-
-
-agregar query para buscar la clase por turno y actividad
-
+  Controladores
+    Actividad
+    Clase
+    Entrenador
+    Socio
