@@ -55,8 +55,8 @@ public class ActividadServicio {
     }
 
     // TRAER ACTIVIDAD POR ID-----------------------------------------------ya esta 
-    public Actividad getOne(ActividadCreateDTO ADTO) {
-        Optional<Actividad> respuesta = activRepositorio.findById(ADTO.getId());
+    public Actividad getOne(Long id) {
+        Optional<Actividad> respuesta = activRepositorio.findById(id);
         if (respuesta.isPresent()) {
             Actividad newActividad = respuesta.get();
             return newActividad;

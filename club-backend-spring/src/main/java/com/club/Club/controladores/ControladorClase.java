@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,9 +43,9 @@ public class ControladorClase {
     }
 
     // TRAER ACTIVIDAD POR ID
-    @GetMapping("/clase_id/")
-    public Clase traerClaseId(@RequestBody ClaseCreateDTO CDTO) {
-        return claseServicio.getOne(CDTO);
+    @GetMapping("/{clase_id}")
+    public Clase traerClaseId(@PathVariable Long id) {
+        return claseServicio.getOne(id);
 
     }
 

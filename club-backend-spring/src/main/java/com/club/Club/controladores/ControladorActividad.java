@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,10 +40,10 @@ public class ControladorActividad {
         actividadServicio.CrearActividad(ADTO);
      }
      // TRAER ACTIVIDAD POR ID
-     @GetMapping("/actividad_id/")
-     public Actividad traerActividadId(@RequestBody ActividadCreateDTO ADTO ){
+     @GetMapping("/{actividad_id}")
+     public Actividad traerActividadId(@PathVariable Long id ){
         //actividadServicio.getOne(ADTO);
-        return actividadServicio.getOne(ADTO);
+        return actividadServicio.getOne(id);
 
      }
      // MODIFICAR ACTIVIDAD
